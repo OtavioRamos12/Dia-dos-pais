@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>secret</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="layout">
+        <div class="foto-esquerda">
+            <img src="./img/foto1.jfif" alt="Foto 1">
+        </div>
+
+        <div class="mensagem-dia-dos-pais">
+            <p id="mensagem"></p>
+        </div>
+
+        <div class="foto-direita">
+            <img src="./img/foto2.jpg" alt="Foto 2">
+        </div>
+    </nav>
+
+    <script>
+        const texto = `Feliz dia dos pai meu véio, obrigado por sempre estar ao meu lado,
+sempre fazendo meu gostos, além de pai vc tbm é o melhor amigo que eu poderia ter,
+tenho orgulho de poder te chamar de pai. `;
+
+        let i = 0;
+        const velocidade = 35;
+
+        function digitarTexto() {
+            if (i < texto.length) {
+                document.getElementById("mensagem").innerText = texto.substring(0, i);
+                i++;
+                setTimeout(digitarTexto, velocidade);
+            }
+        }
+        window.onload = digitarTexto;
+    </script>
+</body>
+
+</html>
